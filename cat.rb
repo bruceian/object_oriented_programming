@@ -6,12 +6,16 @@ class Cat
     @meal_time = meal_time
   end
 
-  def eats_at(eat_time)
-    "#{@meal_time}PM"
+  def eats_at
+    if @meal_time > 12
+      return "#{@meal_time - 12} PM"
+    else
+      return "#{@meal_time} AM"
+    end
   end
 
   def meow
-    return "My name is #{@name} and I eat #{@preferred_food} "
+    return "My name is #{@name} and I eat #{@preferred_food} at #{eats_at}"
   end
 
 end
