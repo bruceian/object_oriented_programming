@@ -8,7 +8,7 @@ class Cat
 
   def eats_at
     if @meal_time > 12
-      return "#{@meal_time - 12} PM"
+      return "#{@meal_time - 12} PM" #need a value RETURNED not printed
     else
       return "#{@meal_time} AM"
     end
@@ -19,3 +19,9 @@ class Cat
   end
 
 end
+
+boston = Cat.new("Boston", "rice", 20)
+miko = Cat.new("Miko", "bananas", 9)
+
+puts miko.meow
+puts boston.meow 
