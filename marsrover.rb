@@ -6,24 +6,28 @@ class Rover
     @orientation = orientation.upcase.chomp
   end
 
-def parameter(x,y)
-  if @pos_x > x_max || @pos_y > y_max
+def parameter(x_max, y_max)
+  if @pos_x <= x_max || @pos_y <= y_max
+    puts "In bound."
+  else
     puts "Out of bounds."
+  end
+end
 
-def read_instruction(instruction)
-      instruction.split("").map do |letter|
-          if letter == "M"
+def read_instructions(input)
+  input.each_char do |letters|
+          if letters == "M"
             move
-          elsif letter == "L"
+          elsif letters == "L"
             turn_left
-          elsif letter == "R"
+          elsif letters == "R"
             turn_right
           else
-            puts "Error."
+            puts "Command does not exist."
           end
         end
-      end
 end
+
 
   def move
     if @orientation == "N"
@@ -61,7 +65,17 @@ def turn_right()
   end
 end
 
-def
+def position
+  return @pos_x, @pos_y, @orientation
+end
 
 
 end
+
+
+puts "enter x y and direction"
+x, y, dir = gets.split(" ")
+
+
+rover1 = Rover.new(x.to_i, y.to_i, dir )
+rover1.parameter
