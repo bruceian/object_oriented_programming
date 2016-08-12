@@ -1,12 +1,12 @@
 class Person
 
-  def intialize(first_name, last_name)
+  def initialize(first_name, last_name)
     @first_name = first_name
     @last_name = last_name
   end
 
   def name
-    "#{@first_name} #{last_name}"
+    "Hi, my name is #{@first_name} #{@last_name}." #greeting method in superclass
   end
 
 end
