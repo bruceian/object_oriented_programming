@@ -69,13 +69,7 @@ def position
   return @pos_x, @pos_y, @orientation
 end
 
-
 end
 
-
-puts "enter x y and direction"
-x, y, dir = gets.split(" ")
-
-
-rover1 = Rover.new(x.to_i, y.to_i, dir )
-rover1.parameter
+puts "Enter the plateau size (x and y value): "
+x_max, y_max = gets.split(" ")
